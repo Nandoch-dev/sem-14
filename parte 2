@@ -1,3 +1,29 @@
 ejercicio 3
 /
 /
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ejercicio_3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            char[] c; //se crea una variable C declarandola como un array de caracteres, pero sin ningun tipo de longitud ni valores
+            Console.Write("* Ingresa mensaje: ");//se utiliza el Write para que muestre un mensaje en consola pero sin un salto de linea al final
+            c = Console.ReadLine().ToCharArray();//se utiliza el Read donde se guarda lo ingresado y el tochararray para convertirlo en un array de caracteres.
+            Console.WriteLine(); //para  hacer un salto de linea y se vea mas ordenado
+            Console.WriteLine("* Mensaje ingresado.");//se utiliza el Writeline para que muestre un mensaje en consola, este si salta la linea
+            Console.Write("c[{0}] = ", c.Length);// para que muestre en consola la longitud del array
+            for (int i = 0; i < c.Length; i++) // bucle for para mostrar en consola cada elemento del array, imprimiendo caracter por caracter.
+            {
+                Console.Write("[{0}]", c[i]);
+            }
+            Console.ReadKey();
+        }
+    }
+}
