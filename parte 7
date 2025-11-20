@@ -1,1 +1,56 @@
+ejercicio 8
+/
+/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace ejercicio_8
+{
+    internal class Program
+    {  
+        static void invertir(char[] c)
+        //funcion para invertir las posiciones del array 
+        {
+            // creacion de variables
+            char aux;
+            int size = c.Length;
+            //
+            for (int i = 0; i < size / 2; i++) // bucle for para invertir las posiciones del array
+            {
+                aux = c[i];
+                c[i] = c[size - i - 1];
+                c[size - i - 1] = aux;
+            }
+        }
+        static void imprimir(char[] c)
+        // funcion que tiene como objetico imprimir en consola los valores del array c
+        {
+            int size = c.Length; // a la variable creada se le asinga la longitud de c
+            Console.Write("a[{0}] = ", size); //se imprime en consola un mensaje sin salto de linea
+            for (int i = 0; i < size; i++) // bucle for para imprimir en consola los valores del array c
+            {
+                Console.Write("[{0}]", c[i]);
+            }
+        }
+        static char[] ingreso()
+            {
+                char[] c; // se crea el array c tipo char
+                Console.Write("Digite una frase: ");// mensaje mostrado en consola sin salto de linea
+                c = Console.ReadLine().ToCharArray(); // lo ingresado en convierte en un array de caracteres
+                                                      // que se guarda en c
+                return c;// retorna  el array c para utilizarlo en el main
+            }
+            static void Main(string[] args)
+            {
+                char[] c;// se declara el array c tipo caracter
+                c = ingreso();// se llama a la funcion para que el usuario ingrese un mensaje 
+                invertir(c);// se llama a la funcion para que se invierte las posiciones del array c
+                Console.WriteLine("\nFrase invertida: "); // mensaje que se muestra en consola
+                imprimir(c);// se llama a la funcion para imprimir en consola los valores del array 'c'
+                Console.ReadKey();
+            }
+    }
+}
