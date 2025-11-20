@@ -1,1 +1,65 @@
+ejercicio 7
+/
+/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace ejercicio_7
+{
+    internal class Program
+    {
+        static void imprimir(int[] a)
+            // funcion que tiene como objetico imprimir en consola los valores del array a
+        {
+            int size = a.Length; // a la variable creada se le asinga la longitud de a
+            Console.Write("a[{0}] = ", size); //se imprime en consola un mensaje sin salto de linea
+            for (int i = 0; i < size; i++) // bucle for para imprimir en consola los valores del array a
+            {
+                Console.Write("[{0}]", a[i]);
+            }
+        }
+        static void invertir(int[] a)
+            //funcion para invertir las posiciones del array 
+        {
+            // creacion de variables
+            int aux;
+            int size = a.Length;
+            //
+            for (int i = 0; i < size / 2; i++) // bucle for para invertir las posiciones del array
+            {
+                aux = a[i];
+                a[i] = a[size - i - 1];
+                a[size - i - 1] = aux;
+            }
+        }
+        static int[] ingreso()
+            //funcion para ingresar el tamaño y los valores del array
+        {
+            // creacion del array a y variable size
+            int[] a; int size; 
+            //
+            Console.Write("Ingresar tamaño del array: "); // muestra en consola un mensaje sin salto de linea
+            size = int.Parse(Console.ReadLine()); // lo ingresado por consola se convierte en int y se guarda en size
+            a = new int[size];// crea un array entero con la longitud guardada en size
+            Console.WriteLine("\nIngresar datos al array:");
+            for (int i = 0; i < size; i++)// bucle for para asignar a cada indice del array 'a' un valor.
+            {
+                Console.Write("a[{0}] = ", i);
+                a[i] = int.Parse(Console.ReadLine());
+            }
+            return a;
+        }
+        static void Main(string[] args)
+        {
+            int[] a;// se crea el array a tipo entero
+            a = ingreso(); //se llama a la funcion y lo operado se guarda en 'a'
+            invertir(a);// se llama a la funcion para invertir los elementos del array a
+            Console.WriteLine("\nImpresión de datos del array:");// mensaje mostrado en consola
+            imprimir(a);// se llama a la funcion para mostrar en consola los elementos del array
+            Console.ReadKey();
+        }
+    }
+}
