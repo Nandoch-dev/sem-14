@@ -1,0 +1,1 @@
+la explicacion logica esta puesta en comentarios dentro de los programs.cs,
