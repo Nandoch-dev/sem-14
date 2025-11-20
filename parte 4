@@ -1,1 +1,59 @@
+ejercicio 5
+/
+/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace ejercicio_5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            char[] frase;// se crea el array de caracteres llamada frase.
+            // creacion de variables, con asignacion de valor menos lim
+            int lim, cont_a = 0, cont_e = 0,
+            cont_i = 0, cont_o = 0, cont_u = 0;
+            //
+            Console.Write("Digite una frase: ");// se muestra en consola el mensaje
+            frase = Console.ReadLine().ToCharArray();// lo introducido en consola se asigna a 'frase'
+            // pero convirtiendo el mensaje en un array de caracteres
+            lim = frase.Length;// se le asigna a lim la longitud del array frase.
+            for (int i = 0; i < lim; i++)//bucle for para que recorre cada indice de 'frase'
+            {
+                switch (char.ToUpper(frase[i]))//.toupper convierte dentro del array 'frase' cada caracter en mayuscula 
+                {
+                    //si en el recorrido del array, algun indice llega a tener alguna de las vocales se aumenta el valor 
+                    //de las variables asignadas a cada vocal.
+                    case 'A':
+                        cont_a++;
+                        break;
+                    case 'E':
+                        cont_e++;
+                        break;
+                    case 'I':
+                        cont_i++;
+                        break;
+                    case 'O':
+                        cont_o++;
+                        break;
+                    case 'U':
+                        cont_u++;
+                        break;
+                }
+            }
+            // se muestra en consola la cantidad de vocales encontradas en el mensaje que se asignado al array 'frase'
+            //cada vocal se imprime en una linea para tener un orden.
+            Console.WriteLine("\nContador de vocales.");
+            Console.WriteLine("* Vocal a: {0}", cont_a);
+            Console.WriteLine("* Vocal e: {0}", cont_e);
+            Console.WriteLine("* Vocal i: {0}", cont_i);
+            Console.WriteLine("* Vocal o: {0}", cont_o);
+            Console.WriteLine("* Vocal u: {0}", cont_u);
+            Console.ReadKey();
+        }
+    }
+}
