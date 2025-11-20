@@ -1,1 +1,38 @@
+ejercicio 4
+/
+/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace ejercicio_4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int lim1, lim2;//creacion de variables en tipo int
+            char[] s = "Bienvenido ".ToCharArray();//se crea array s, convirtiendo el mensaje en un array de caracteres
+            char[] n; // se crea array s sin valores ni tamaño
+            Console.Write("* Ingresar su normbre: "); // el write para mostrar mensaje sin salto de linea
+            n = Console.ReadLine().ToCharArray();// lo ingresado se convierte en un array de caracteres
+            lim1 = s.Length;//se asigna a la variable la longitud del array s
+            lim2 = n.Length;//se asigna a la variable la longitud del array n
+            Array.Resize(ref s, lim2 + lim1);// se redimensiona el array s, sumando la longitud de cada array creado
+            for (int i = 0; i < lim2; i++)// Bucle for que copia cada valor del array n en el array s,
+                                          // comenzando desde el índice lim1 (11) y rellenando secuencialmente.
+            {
+                s[lim1 + i] = n[i];
+            }
+            lim1 = lim1 + lim2;//se actuailiza lim 1, agregando lim2 que es la cantidad de caracteres de n
+            Console.WriteLine();
+            Console.Write("* Frase: ");//muestra en consola un mensaje
+            for (int i = 0; i < lim1; i++)//bucle for para que muestre en consola cada caracter del array s de forma consecutiva.
+            {
+                Console.Write("{0}", s[i]); //write para que no salte linea despues de cada impresion de caracter y se forme un mensaje.
+        }
+    }
+}
+        
