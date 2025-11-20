@@ -1,1 +1,44 @@
+ejercicio 6
+/
+/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace ejercicio_6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //creacion de variables
+            string r;
+            char c;
+            int ascii;
+            //
+            Console.Write("Digite un caracter: ");// mensaje que se muestra en consola
+            c = char.Parse(Console.ReadLine());//lo ingresado en consola tipo string se convierte en char y se guarda en c
+            ascii = (int)char.ToUpper(c);// el valor de c se convierte en mayuscula y luego obtiene su valor numerico ASCII
+            // se usa la condicional if indicando que se guarde un mensaje en r
+            // segun el rango en el que se encuentre la variable ASCII
+            if (ascii >= 48 && ascii <= 57)
+            {
+                r = "es un numero";
+            }
+            else if (ascii >= 65 && ascii <= 90)
+            {
+                r = "es una letra";
+            }
+            else
+            {
+                r = "es una simbolo";
+            }
+            Console.WriteLine();//salto de linea
+            Console.WriteLine("* Resultado: {0}, {1}", c, r);// se muestra en consola el mensaje, el caracter ingresado (c)
+                         // seguido por como esta determinado ese caracter, mensaje guardado en r
+            Console.ReadKey();
+        }
+    }
+}
